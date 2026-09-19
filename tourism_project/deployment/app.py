@@ -2,6 +2,12 @@ import streamlit as st
 import joblib
 import pandas as pd
 
+# Import libraries used in the pipeline so joblib can rebuild them
+import sklearn
+import xgboost
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+
 st.title("Wellness Tourism Package Prediction")
 
 model = joblib.load("tourism_project/deployment/best_model.pkl")
